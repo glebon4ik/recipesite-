@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Вход{% endblock %}
+
+{% block content %}
+  <h2>Вход</h2>
+  <form method="post" class="col-md-4">
+    {% csrf_token %}
+    <!-- Сообщение об ошибках -->
+    {% if form.errors %}
+      <div class="alert alert-danger">
+        Проверьте правильность введённых данных.
+      </div>
+    {% endif %}
+
+    <div class="mb-3">
+      <label for="id_username" class="form-label">Имя пользователя</label>
+      {{ form.username }}
+    </div>
+    <div class="mb-3">
+      <label for="id_password" class="form-label">Пароль</label>
+      {{ form.password }}
+    </div>
+    <button type="submit" class="btn btn-primary">Войти</button>
+  </form>
+{% endblock %}

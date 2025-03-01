@@ -1,0 +1,25 @@
+header {
+    background-color: #f8f8f8;
+    padding: 10px 0;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    margin-bottom: 20px; /* чуть побольше отступов между карточками */
+}
+
+footer {
+    background-color: #fafafa;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Пример класса, чтобы чуть увеличить отступ внутри формы */
+.form-container {
+    margin-top: 20px;
+}

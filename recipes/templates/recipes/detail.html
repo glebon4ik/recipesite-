@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Рецепт: {{ recipe.title }}{% endblock %}
+
+{% block content %}
+  <div class="card mb-4">
+    {% if recipe.image %}
+      <img src="{{ recipe.image.url }}" class="card-img-top" alt="{{ recipe.title }}">
+    {% else %}
+      <img src="https://via.placeholder.com/300x200.png?text=No+Image" class="card-img-top" alt="No image">
+    {% endif %}
+    <div class="card-body">
+      <h2 class="card-title">{{ recipe.title }}</h2>
+      <p><strong>Автор:</strong> {{ recipe.author.username }}</p>
+      <p><strong>Время приготовления:</strong> {{ recipe.cooking_time }} мин</p>
+      <hr>
+      <h4>Описание:</h4>
+      <p>{{ recipe.description }}</p>
+      <h4>Шаги приготовления:</h4>
+      <p>{{ recipe.instructions }}</p>
+      <h4>Ингредиенты:</h4>
+      <p>{{ recipe.ingredients }}</p>
+      <h4>Категории:</h4>
+      <ul>
+        {% for cat in recipe.categories.all %}
+          <li>{{ cat.name }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endblock %}
